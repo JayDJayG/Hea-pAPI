@@ -1,0 +1,12 @@
+{
+  "name": "Hea",
+  "version": "1",
+  "main": "index.js",
+  "repository": "https://github.com/JayDJayG/Hea-pAPI.git",
+  "author": "JayDJayG <j.d.guzman.v@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tsc": "^2.0.4",
+    "typescript": "^4.6.3"
+  }
+}
