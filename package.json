@@ -1,12 +1,17 @@
 {
-  "name": "Hea",
-  "version": "1",
-  "main": "index.js",
-  "repository": "https://github.com/JayDJayG/Hea-pAPI.git",
-  "author": "JayDJayG <j.d.guzman.v@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "tsc": "^2.0.4",
-    "typescript": "^4.6.3"
-  }
+    "name": "Hea",
+    "version": "1",
+    "main": "index.js",
+    "scripts": {
+        "watch": "npx tsc -w"
+
+    },
+    "repository": "https://github.com/JayDJayG/Hea-pAPI.git",
+    "author": "JayDJayG <j.d.guzman.v@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^27.5.1",
+        "tsc": "^2.0.4",
+        "typescript": "^4.6.3"
+    }
 }

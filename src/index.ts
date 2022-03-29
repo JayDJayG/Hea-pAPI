@@ -5,3 +5,7 @@ export function hello(world: string = "world"): string {
 }
 
 console.log("Hello World!");
+console.log("Watching...");
+console.log("You");
+
+
