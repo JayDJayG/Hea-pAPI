@@ -3,15 +3,21 @@
     "version": "1",
     "main": "index.js",
     "scripts": {
-        "watch": "npx tsc -w"
-
+        "watch": "npx tsc -w",
+        "test": "jest"
     },
     "repository": "https://github.com/JayDJayG/Hea-pAPI.git",
     "author": "JayDJayG <j.d.guzman.v@gmail.com>",
     "license": "MIT",
     "devDependencies": {
+        "@types/jest": "^27.4.1",
         "jest": "^27.5.1",
+        "ts-jest": "^27.1.4",
         "tsc": "^2.0.4",
+        "tslint": "^6.1.3",
         "typescript": "^4.6.3"
+    },
+    "dependencies": {
+        "tslint-config-airbnb": "^5.11.2"
     }
 }
