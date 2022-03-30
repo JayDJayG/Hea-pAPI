@@ -1,11 +1,25 @@
-# jest.config.ts
+import * as Fs from 'fs'
+import { pathsToModuleNameMapper } from 'ts-jest'
+import * as TypeScript from 'typescript'
 
-import type {Config} from '@jest/types';
-// Sync object
-const config: Config.InitialOptions = {
-  verbose: true,
+const tsconfig: {
+  config?: { compilerOptions?: { paths?: Record<string, string[]> } }
+  error?: TypeScript.Diagnostic
+} = TypeScript.readConfigFile('tsconfig.json', (path) => Fs.readFileSync(path, { encoding: 'utf-8' }))
+
+const config = {
   transform: {
-  ‘^.+\\.tsx?$’: ‘ts-jest’,
+    '^.+\\.ts$': '@swc/jest',
   },
-};
-export default config;
+  moduleNameMapper: pathsToModuleNameMapper(tsconfig.config?.compilerOptions?.paths ?? {}, {
+    prefix: '<rootDir>',
+  }),
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+    'jest-watch-select-projects',
+    'jest-watch-suspend',
+  ],
+}
+
+export default config
