@@ -2,9 +2,15 @@
 import {heap} from '../src/heapAPI'
   
 describe("General class tests", () => {
+  
   test("init empty heap", () => {
     const test_heap = new heap();
     expect(test_heap.data.length).toBe(0)
+})
+
+test("init a loaded heap", () => {
+  const test_heap = new heap([1, 2, 3 ,4 ,5]);
+  expect(test_heap.data.length).toBe(5)
 }) 
 /*
   Missing tests

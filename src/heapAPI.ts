@@ -1,7 +1,13 @@
 export class heap {
-    data: number[]
+    public readonly data: number[];
 
-    constructor() {
+    constructor(heapList?: number[]) {
+      if (heapList) {
+        this.data = Object.assign([], );
+      }
+      else {
         this.data = [];
       }
+      }
 }
+
