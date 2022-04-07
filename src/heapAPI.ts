@@ -9,5 +9,9 @@ export class heap {
         this.data = [];
       }
       }
+      
+    len(){
+      return this.data.length; 
+    }
 }
 

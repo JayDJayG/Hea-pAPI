@@ -12,11 +12,12 @@ test("init a loaded heap", () => {
   const test_heap = new heap([1, 2, 3 ,4 ,5]);
   expect(test_heap.data.length).toBe(5)
 }) 
-/*
-  Missing tests
-  1. init passing an array. 
-  2. __len__ 
-*/
+
+test("measuring length of loaded heap", () => {
+  const test_heap = new heap([1, 2, 3 ,4 ,5]);
+  let len = test_heap.len();
+  expect(len).toBe(5)
+}) 
 
 })
 
