@@ -21,21 +21,24 @@ test("measuring length of loaded heap", () => {
 
 })
 
-/*
+
 //TO IMPLEMENT
 describe("Heap navigation tests", () => {
-  test("TBD", () => {
+  test("node parent", () => {
+    const test_heap = new heap([1, 2, 3 ,4 ,5]);
+  let len = test_heap.len();
+  expect(len).toBe(500)
+  })
+  /*
     1. parent
     2. left
     3. right
     4. has_left
     5. has_right
+    */
+ })
 
-}) })
-
-
-
-
+/*
 describe("Heap array manipulation tests", () => {
   test("TBD", () => {
     //AAA
