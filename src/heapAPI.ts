@@ -3,7 +3,7 @@ export class heap {
 
     constructor(heapList?: number[]) {
       if (heapList) {
-        this.data = Object.assign([], );
+        this.data = Object.assign([], heapList);
       }
       else {
         this.data = [];
