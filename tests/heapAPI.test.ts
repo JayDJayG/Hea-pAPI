@@ -54,9 +54,20 @@ describe("Heap navigation tests", () => {
   })
 
   test("the heap is empty", () => {
-    const test_heap = new heap([]);
+    const test_heap = new heap([1]);
     let is_file_empty : boolean = test_heap.is_empty();
-    expect(is_file_empty).toBe(true);
+    expect(is_file_empty).toBe(false);
+  })
+
+  test("get root node on a non empty heap", () => {
+    const test_heap = new heap([1,2,3,4,5]);
+    let root : number = test_heap.root();
+    expect(root).toBe(1);
+  })
+
+  test("get root node on an empty heap", () => {
+    const test_heap = new heap([]);
+    expect(() => {test_heap.root();}).toThrow();
   })
   
  })

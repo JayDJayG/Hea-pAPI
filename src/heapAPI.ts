@@ -34,11 +34,20 @@ export class heap {
     }
 
     is_empty(this: heap): boolean{
-      if (this.len() == 0){
+      if (this.len() === 0){
         return true;
       }
       else {
         return false;
+      }
+    }
+
+    root(this: heap) : number{
+      if (this.is_empty() == false){
+        return this.data[0];
+      }
+      else{
+        throw new Error('Heap is empty');
       }
     }
 }
