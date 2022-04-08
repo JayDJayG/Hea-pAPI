@@ -26,8 +26,10 @@ test("measuring length of loaded heap", () => {
 describe("Heap navigation tests", () => {
   test("node parent", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
-  let len = test_heap.len();
-  expect(len).toBe(500)
+    let index = 2;
+    parent = test_heap._parent(index);
+    expect(parent).toBe(1);  
+
   })
   test("node left", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
