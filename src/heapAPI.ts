@@ -32,5 +32,14 @@ export class heap {
     has_right(j: number) : boolean{
       return this.right(j) < this.len();
     }
+
+    is_empty(this: heap): boolean{
+      if (this.len() == 0){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
 }
 

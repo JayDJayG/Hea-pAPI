@@ -52,8 +52,16 @@ describe("Heap navigation tests", () => {
     let has_right : boolean = test_heap.has_right(1);
     expect(has_right).toBe(true);
   })
+
+  test("the heap is empty", () => {
+    const test_heap = new heap([]);
+    let is_file_empty : boolean = test_heap.is_empty();
+    expect(is_file_empty).toBe(true);
+  })
   
  })
+
+
 
  //TO Implement
 /*
