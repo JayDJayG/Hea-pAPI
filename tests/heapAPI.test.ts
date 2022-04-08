@@ -21,8 +21,6 @@ test("measuring length of loaded heap", () => {
 
 })
 
-
-//TO IMPLEMENT
 describe("Heap navigation tests", () => {
   test("node parent", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
@@ -31,7 +29,7 @@ describe("Heap navigation tests", () => {
     expect(parent).toBe(1);  
 
   })
-  
+
   test("node left", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
     let left : number = test_heap.left(2);
@@ -44,14 +42,21 @@ describe("Heap navigation tests", () => {
     expect(right).toBe(8);
   })
     
-
-  /*
-    3. right
-    4. has_left
-    5. has_right
-    */
+  test("node has_left", () => {
+    const test_heap = new heap([1, 2, 3 ,4 ,5]);
+    let has_left : boolean = test_heap.has_left(1);
+    expect(has_left).toBe(true);
+  })
+  
+  test("node has_right", () => {
+    const test_heap = new heap([1, 2, 3 ,4 ,5]);
+    let has_right : boolean = test_heap.has_right(1);
+    expect(has_right).toBe(true);
+  })
+  
  })
 
+ //TO Implement
 /*
 describe("Heap array manipulation tests", () => {
   test("TBD", () => {

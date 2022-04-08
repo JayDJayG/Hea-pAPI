@@ -20,5 +20,13 @@ export class heap {
     right(j: number): number{
       return 2 * j + 2;
     }
+
+    has_left(j: number) : boolean{
+      return this.left(j) < this.len();
+    }
+
+    has_right(j: number) : boolean{
+      return this.right(j) < this.len();
+    }
 }
 
