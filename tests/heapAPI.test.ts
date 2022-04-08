@@ -27,19 +27,25 @@ describe("Heap navigation tests", () => {
   test("node parent", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
     let index = 2;
-    parent = test_heap._parent(index);
+    parent = test_heap.parent(index);
     expect(parent).toBe(1);  
 
   })
+  
   test("node left", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
     let left : number = test_heap.left(2);
     expect(left).toBe(5);
   })
   
+  test("node right", () => {
+    const test_heap = new heap([1, 2, 3 ,4 ,5]);
+    let right : number = test_heap.right(3);
+    expect(right).toBe(8);
+  })
+    
+
   /*
-    1. parent
-    2. left
     3. right
     4. has_left
     5. has_right
