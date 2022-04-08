@@ -25,9 +25,8 @@ describe("Heap navigation tests", () => {
   test("node parent", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
     let index = 2;
-    parent = test_heap.parent(index);
-    expect(parent).toBe(1);  
-
+    let parent = test_heap.parent(index);
+    expect(parent).toBe(0);
   })
 
   test("node left", () => {

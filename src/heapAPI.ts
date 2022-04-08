@@ -14,6 +14,10 @@ export class heap {
       return this.data.length; 
     }
 
+    parent(j: number):number{
+      return Math.floor((j-1)/2);
+    }
+
     left(j: number): number{
       return 2 * j + 1;
     }
