@@ -26,7 +26,8 @@ describe("Heap navigation tests", () => {
     const test_heap = new heap([1, 2, 3 ,4 ,5]);
     let index = 2;
     let parent = test_heap.parent(index);
-    expect(parent).toBe(0);
+    expect(parent).toBe(0);  
+
   })
 
   test("node left", () => {
@@ -52,34 +53,40 @@ describe("Heap navigation tests", () => {
     let has_right : boolean = test_heap.has_right(1);
     expect(has_right).toBe(true);
   })
-  
+
  })
 
- //TO Implement
-/*
 describe("Heap array manipulation tests", () => {
-  test("TBD", () => {
-    //AAA
-}) 
 
+  
+  test("Swap nodes", () => {
+    
+    const test_heap : heap = new heap([1, 2, 3 ,4 ,5]);
+    console.log(test_heap.data.toString());
+    let swappedString : string = "2,1,3,4,5";
+    test_heap.swap(0,1);
+    expect(swappedString).toEqual(test_heap.data.toString());
+}) 
+/*
   Missing tests
   1. swap 
   2. uphead
   3. downheap 
   4. add
-
+*/
 })
+
 
 describe("Heap query operantion tests", () => {
   test("TBD", () => {
     //AAA
 }) 
 
-  Missing tests
-  1. min
-  2. remove_min
-  3. is_empty
+
+//  Missing tests
+//  1. min
+//  2. remove_min
+//  3. is_empty
   
 })
 
-*/

@@ -32,5 +32,9 @@ export class heap {
     has_right(j: number) : boolean{
       return this.right(j) < this.len();
     }
+    swap(j: number, k: number): void{
+      //self. data[i], self. data[j] = self. data[j], self. data[i]
+      [this.data[j], this.data[k]] = [this.data[k], this.data[j]];
+    }
 }
 
