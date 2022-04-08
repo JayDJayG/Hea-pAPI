@@ -13,5 +13,8 @@ export class heap {
     len(){
       return this.data.length; 
     }
+    left(j: number){
+      return 2 * j + 1;
+    }
 }
 

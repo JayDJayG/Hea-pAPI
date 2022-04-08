@@ -29,6 +29,12 @@ describe("Heap navigation tests", () => {
   let len = test_heap.len();
   expect(len).toBe(500)
   })
+  test("node left", () => {
+    const test_heap = new heap([1, 2, 3 ,4 ,5]);
+    let left : number = test_heap.left(2);
+    expect(left).toBe(5);
+  })
+  
   /*
     1. parent
     2. left
