@@ -36,5 +36,23 @@ export class heap {
       //self. data[i], self. data[j] = self. data[j], self. data[i]
       [this.data[j], this.data[k]] = [this.data[k], this.data[j]];
     }
+
+    is_empty(this: heap): boolean{
+      if (this.len() === 0){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    root(this: heap) : number{
+      if (this.is_empty() == false){
+        return this.data[0];
+      }
+      else{
+        throw new Error('Heap is empty');
+      }
+    }
 }
 
