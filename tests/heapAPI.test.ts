@@ -79,13 +79,18 @@ describe("Heap navigation tests", () => {
 
 describe("Heap array manipulation tests", () => {
 
-
   test("Swap nodes", () => {
     const test_heap: heap = new heap([1, 2, 3, 4, 5]);
     console.log(test_heap.data.toString());
     let swappedString: string = "2,1,3,4,5";
     test_heap.swap(0, 1);
     expect(swappedString).toEqual(test_heap.data.toString());
+  })
+
+  test("Upheap - move node up", () => {
+    let test_heap: heap = new heap([1,3,4,2,5]);
+    test_heap.up_heap(3);
+    expect(test_heap.data[1]).toBe(2);
   })
 })
 

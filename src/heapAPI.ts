@@ -32,10 +32,6 @@ export class heap {
     has_right(j: number) : boolean{
       return this.right(j) < this.len();
     }
-    swap(j: number, k: number): void{
-      //self. data[i], self. data[j] = self. data[j], self. data[i]
-      [this.data[j], this.data[k]] = [this.data[k], this.data[j]];
-    }
 
     is_empty(this: heap): boolean{
       if (this.len() === 0){
@@ -54,5 +50,22 @@ export class heap {
         throw new Error('Heap is empty');
       }
     }
+
+    swap(j: number, k: number): void{
+      //self. data[i], self. data[j] = self. data[j], self. data[i]
+      [this.data[j], this.data[k]] = [this.data[k], this.data[j]];
+    }
+
+    up_heap(j: number): void{
+      if (j > 0){
+        let parent: number = this.parent(j);
+        if (this.data[parent] > this.data[j]){
+          this.swap(parent, j);
+          console.log(this.data)
+          this.up_heap(parent);
+        }
+      }
+    }
+
 }
 
