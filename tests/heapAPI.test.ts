@@ -68,8 +68,7 @@ describe("Heap array manipulation tests", () => {
     expect(swappedString).toEqual(test_heap.data.toString());
 }) 
 /*
-  Missing tests
-  1. swap 
+  Missing tests 
   2. uphead
   3. downheap 
   4. add
