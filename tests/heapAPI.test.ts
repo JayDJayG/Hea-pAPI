@@ -92,6 +92,13 @@ describe("Heap array manipulation tests", () => {
     test_heap.up_heap(3);
     expect(test_heap.data[1]).toBe(2);
   })
+
+  test("Upheap - don't move node", () => {
+    let test_heap: heap = new heap([1,2,3,4,5]);
+    test_heap.up_heap(3);
+    expect(test_heap.data[1]).toBe(2);
+  })
+
 })
 
 /*
