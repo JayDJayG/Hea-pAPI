@@ -61,8 +61,20 @@ export class heap {
         let parent: number = this.parent(j);
         if (this.data[parent] > this.data[j]){
           this.swap(parent, j);
-          console.log(this.data)
           this.up_heap(parent);
+        }
+      }
+    }
+
+    down_heap(j: number): void{
+      if (this.has_left(j)){
+        let index_smallest_child = this.left(j);
+        if (this.has_right(j) && (this.data[this.left(j)] > this.data[this.right(j)])){
+          index_smallest_child = this.right(j);
+        }
+        if (this.data[j] > this.data[index_smallest_child]){
+          this.swap(j, index_smallest_child);
+          this.down_heap(index_smallest_child);
         }
       }
     }

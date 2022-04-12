@@ -88,15 +88,21 @@ describe("Heap array manipulation tests", () => {
   })
 
   test("Upheap - move node up", () => {
-    let test_heap: heap = new heap([1,3,4,2,5]);
-    test_heap.up_heap(3);
-    expect(test_heap.data[1]).toBe(2);
+    let test_heap: heap = new heap([5,3,4,2,1]);
+    test_heap.up_heap(4);
+    expect(test_heap.data[0]).toBe(1);
   })
 
   test("Upheap - don't move node", () => {
     let test_heap: heap = new heap([1,2,3,4,5]);
     test_heap.up_heap(3);
     expect(test_heap.data[1]).toBe(2);
+  })
+
+  test("downheap", () => {
+    let test_heap: heap = new heap([5,3,4,2,1]);
+    test_heap.down_heap(0);
+    expect(test_heap.data[test_heap.data.length - 1]).toBe(5);
   })
 
 })
