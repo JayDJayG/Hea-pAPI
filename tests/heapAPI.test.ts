@@ -99,6 +99,12 @@ describe("Heap array manipulation tests", () => {
     expect(test_heap.data[0]).toBe(1);
   })
 
+  test("add", ()=> {
+    let test_heap: heap = new heap([2,3,4,5]);
+    test_heap.add(1);
+    expect(test_heap.data[0]).toBe(1);
+  })
+
 
 
 })
