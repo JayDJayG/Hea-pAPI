@@ -54,18 +54,6 @@ describe("Heap navigation tests", () => {
     expect(has_right).toBe(true);
   })
 
-  test("the heap is empty", () => {
-    const test_heap = new heap([1]);
-    let is_file_empty: boolean = test_heap.is_empty();
-    expect(is_file_empty).toBe(false);
-  })
-
-  test("get root node on a non empty heap", () => {
-    const test_heap = new heap([1, 2, 3, 4, 5]);
-    let root: number = test_heap.root();
-    expect(root).toBe(1);
-  })
-
   test("get root node on an empty heap", () => {
     const test_heap = new heap([]);
     expect(() => { test_heap.root(); }).toThrow();
@@ -107,26 +95,26 @@ describe("Heap array manipulation tests", () => {
 
 })
 
-/*
-  Missing tests
-  1. swap 
-  2. uphead
-  3. downheap 
-  4. add
-  // })
-  */
-
 
 describe("Heap query operantion tests", () => {
   test("TBD", () => {
     //AAA
   })
+  test("the heap is empty", () => {
+    const test_heap = new heap([1]);
+    let is_file_empty: boolean = test_heap.is_empty();
+    expect(is_file_empty).toBe(false);
+  })
+
+  test("get root node on a non empty heap", () => {
+    const test_heap = new heap([1, 2, 3, 4, 5]);
+    let root: number = test_heap.root();
+    expect(root).toBe(1);
+  })
 
 
-  //  Missing tests
-  //  1. min
   //  2. remove_min
-  //  3. is_empty
+
 
 })
 
