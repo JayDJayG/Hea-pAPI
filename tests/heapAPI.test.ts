@@ -105,8 +105,6 @@ describe("Heap array manipulation tests", () => {
     expect(test_heap.data[0]).toBe(1);
   })
 
-
-
 })
 
 

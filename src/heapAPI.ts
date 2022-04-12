@@ -55,26 +55,13 @@ export class heap {
       if (this.data.length === 0) {
         return Error("heap is empty");
       }
+      
       this.swap(0, this.data.length - 1);
       let item : number | undefined = this.data.pop();
       this.down_heap(0)
       return item;
 
     }
-  /*
-  def remove min(self):
-  ”””
-  Remove and return (k,v) tuple with minimum key.
-  Raise Empty exception if empty. 
-  ”””
-  if self.is empty():
-    raise Empty( Priority queue is empty. )
-  self. swap(0, len(self. data) − 1) 
-  item = self. data.pop( )
-  self. downheap(0)
-  return (item. key, item. value)
-  //  2. remove_min
-*/
     swap(j: number, k: number): void{
       //self. data[i], self. data[j] = self. data[j], self. data[i]
       [this.data[j], this.data[k]] = [this.data[k], this.data[j]];
@@ -102,11 +89,9 @@ export class heap {
         }
       }
     }
-
     add(new_element: number): void{
       this.data.push(new_element);
       this.up_heap(this.data.length - 1);
     }
-
 }
 
