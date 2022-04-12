@@ -112,9 +112,18 @@ describe("Heap query operantion tests", () => {
     expect(root).toBe(1);
   })
 
-
-  //  2. remove_min
-
+  test("remove_min", () => {
+    const test_heap = new heap([1, 2, 3, 4, 5]);
+    let removed_min = test_heap.remove_min();
+    expect(removed_min).toBe(1);
+  })
+  
+  test("remove_min and heap is empty", () => {
+    const test_heap = new heap();
+    let min_err = test_heap.remove_min();
+    expect(min_err).toStrictEqual(Error("heap is empty"));
+    
+  })
 
 })
 
