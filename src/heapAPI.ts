@@ -103,5 +103,10 @@ export class heap {
       }
     }
 
+    add(new_element: number): void{
+      this.data.push(new_element);
+      this.up_heap(this.data.length - 1);
+    }
+
 }
 
