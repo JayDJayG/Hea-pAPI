@@ -87,11 +87,19 @@ describe("Heap array manipulation tests", () => {
     expect(test_heap.data[1]).toBe(2);
   })
 
-  test("downheap", () => {
+  test("downheap - move node down", () => {
     let test_heap: heap = new heap([5,3,4,2,1]);
     test_heap.down_heap(0);
     expect(test_heap.data[test_heap.data.length - 1]).toBe(5);
   })
+
+  test("downheap - don't move node", () => {
+    let test_heap: heap = new heap([1,2,3,4,5]);
+    test_heap.down_heap(0);
+    expect(test_heap.data[0]).toBe(1);
+  })
+
+
 
 })
 
