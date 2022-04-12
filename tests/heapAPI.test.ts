@@ -8,7 +8,7 @@ describe("General class tests", () => {
     expect(test_heap.data.length).toBe(0)
   })
 
-  test("init a loaded heap", () => {
+  test("init an ordered heap", () => {
     const test_heap = new heap([1, 2, 3, 4, 5]);
     expect(test_heap.data.length).toBe(5)
   })
@@ -103,6 +103,12 @@ describe("Heap array manipulation tests", () => {
     let test_heap: heap = new heap([2,3,4,5]);
     test_heap.add(1);
     expect(test_heap.data[0]).toBe(1);
+  })
+
+  test("heapify an unordered heap", () => {
+    const test_heap = new heap([4,1,5,3,2]);
+    test_heap.heapify();
+    expect(test_heap.data[0]).toBe(1)
   })
 
 
