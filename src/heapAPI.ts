@@ -49,6 +49,17 @@ export class heap {
     }
   }
 
+  remove_min(): number | Error | undefined {
+    if (this.data.length === 0) {
+      return Error("heap is empty");
+    }
+
+    this.swap(0, this.data.length - 1);
+    let item: number | undefined = this.data.pop();
+    this.down_heap(0)
+    return item;
+
+  }
   swap(j: number, k: number): void {
     //self. data[i], self. data[j] = self. data[j], self. data[i]
     [this.data[j], this.data[k]] = [this.data[k], this.data[j]];
@@ -82,7 +93,7 @@ export class heap {
     this.up_heap(this.data.length - 1);
   }
 
-  heapify(this: heap){
+  heapify(this: heap) {
     this.up_heap(0);
     this.down_heap(0);
   }

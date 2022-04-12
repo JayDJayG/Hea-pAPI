@@ -27,7 +27,6 @@ describe("Heap navigation tests", () => {
     let index = 2;
     let parent = test_heap.parent(index);
     expect(parent).toBe(0);
-
   })
 
   test("node left", () => {
@@ -61,10 +60,6 @@ describe("Heap navigation tests", () => {
 
 })
 
-
-
-//TO Implement
-
 describe("Heap array manipulation tests", () => {
 
   test("Swap nodes", () => {
@@ -76,50 +71,45 @@ describe("Heap array manipulation tests", () => {
   })
 
   test("Upheap - move node up", () => {
-    let test_heap: heap = new heap([5,3,4,2,1]);
+    let test_heap: heap = new heap([5, 3, 4, 2, 1]);
     test_heap.up_heap(4);
     expect(test_heap.data[0]).toBe(1);
   })
 
   test("Upheap - don't move node", () => {
-    let test_heap: heap = new heap([1,2,3,4,5]);
+    let test_heap: heap = new heap([1, 2, 3, 4, 5]);
     test_heap.up_heap(3);
     expect(test_heap.data[1]).toBe(2);
   })
 
   test("downheap - move node down", () => {
-    let test_heap: heap = new heap([5,3,4,2,1]);
+    let test_heap: heap = new heap([5, 3, 4, 2, 1]);
     test_heap.down_heap(0);
     expect(test_heap.data[test_heap.data.length - 1]).toBe(5);
   })
 
   test("downheap - don't move node", () => {
-    let test_heap: heap = new heap([1,2,3,4,5]);
+    let test_heap: heap = new heap([1, 2, 3, 4, 5]);
     test_heap.down_heap(0);
     expect(test_heap.data[0]).toBe(1);
   })
 
-  test("add", ()=> {
-    let test_heap: heap = new heap([2,3,4,5]);
+  test("add", () => {
+    let test_heap: heap = new heap([2, 3, 4, 5]);
     test_heap.add(1);
     expect(test_heap.data[0]).toBe(1);
   })
 
   test("heapify an unordered heap", () => {
-    const test_heap = new heap([4,1,5,3,2]);
+    const test_heap = new heap([4, 1, 5, 3, 2]);
     test_heap.heapify();
     expect(test_heap.data[0]).toBe(1)
   })
-
-
 
 })
 
 
 describe("Heap query operantion tests", () => {
-  test("TBD", () => {
-    //AAA
-  })
   test("the heap is empty", () => {
     const test_heap = new heap([1]);
     let is_file_empty: boolean = test_heap.is_empty();
@@ -132,9 +122,17 @@ describe("Heap query operantion tests", () => {
     expect(root).toBe(1);
   })
 
+  test("remove_min", () => {
+    const test_heap = new heap([1, 2, 3, 4, 5]);
+    let removed_min = test_heap.remove_min();
+    expect(removed_min).toBe(1);
+  })
 
-  //  2. remove_min
-
+  test("remove_min and heap is empty", () => {
+    const test_heap = new heap();
+    let min_err = test_heap.remove_min();
+    expect(min_err).toStrictEqual(Error("heap is empty"));
+  })
 
 })
 
